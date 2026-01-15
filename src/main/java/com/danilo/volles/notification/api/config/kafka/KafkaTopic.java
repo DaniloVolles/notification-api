@@ -1,4 +1,4 @@
-package com.danilo.volles.notification.api.config;
+package com.danilo.volles.notification.api.config.kafka;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -19,8 +19,8 @@ public class KafkaTopic {
     @Value(value = "${spring.kafka.producer.bootstrap-servers}")
     private String bootstrapAddress;
 
-    @Value(value = "${topics.documents.request}")
-    private static String TOPIC;
+    @Value(value = "${topic.name.producer}")
+    private String TOPIC;
 
     @Bean
     public KafkaAdmin kafkaAdmin() {

@@ -1,6 +1,6 @@
-package com.danilo.volles.notification.api.config;
+package com.danilo.volles.notification.api.config.kafka;
 
-import com.danilo.volles.notification.api.config.serialization.NotificationJsonSerializer;
+import com.danilo.volles.notification.api.config.kafka.serialization.NotificationJsonSerializer;
 import com.danilo.volles.notification.api.entity.Notification;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -17,7 +17,7 @@ import java.util.Map;
 @Configuration
 public class KafkaProducer {
 
-    @Value("${spring.kafka.bootstrap-servers}")
+    @Value("${spring.kafka.producer.bootstrap-servers}")
     private String bootstrapAddress;
 
     @Bean
@@ -26,7 +26,7 @@ public class KafkaProducer {
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, NotificationJsonSerializer.class);
-        return new DefaultKafkaProducerFactory<String, Notification>(config);
+        return new DefaultKafkaProducerFactory<>(config);
     }
 
     @Bean

@@ -1,4 +1,4 @@
-package com.danilo.volles.notification.api.config.serialization;
+package com.danilo.volles.notification.api.config.kafka.serialization;
 
 import com.danilo.volles.notification.api.entity.Notification;
 import lombok.extern.slf4j.Slf4j;
