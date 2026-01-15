@@ -19,9 +19,7 @@ public class NotificationService {
 
         var notification = new Notification(request);
 
-        System.out.println("notification: " + notification.toString());
-
-        notificationRepository.save(notification);
+        notification = notificationRepository.save(notification);
 
         notificationProducer.kafkaSendNotification(notification);
 
