@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "d7045e91-1667-4301-af33-158170fc09c6",
+		"name": "notification-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24322681"
+	},
+	"item": [
+		{
+			"name": "healthcheck",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/health/is-app-running",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"health",
+						"is-app-running"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-notification",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"mensagem de exemplo para essa notificação\",\r\n    \"title\": \"título da mensagem\",\r\n    \"recipient\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/notifications/send",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"notifications",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
