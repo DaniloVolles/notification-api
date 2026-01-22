@@ -1,3 +1,6 @@
+![Project Banner](notification-api.png)
+# Notification API
+
 ## Sobre essa API
 
 O objetivo dessa aplicação foi implementar um endpoint exposto para inclusão de notificações. <br>
