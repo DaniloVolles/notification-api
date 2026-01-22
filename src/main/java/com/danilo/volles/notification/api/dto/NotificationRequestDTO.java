@@ -4,5 +4,5 @@ import com.danilo.volles.notification.api.entity.RecipientTypes;
 
 public record NotificationRequestDTO(String message,
                                      String title,
-                                     RecipientTypes recipient) {
+                                     String user) {
 }

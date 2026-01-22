@@ -14,7 +14,7 @@ public record NotificationResponseDTO(String title,
                 notification.getTitle(),
                 notification.getMessage(),
                 notification.getCreationDate(),
-                String.valueOf(notification.getRecipient())
+                notification.getUser()
         );
     }
 }

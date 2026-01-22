@@ -17,12 +17,12 @@ public class Notification {
     private String message;
     private String title;
     private Instant creationDate;
-    private RecipientTypes recipient;
+    private String user;
 
     public Notification(NotificationRequestDTO requestDTO) {
         this.message        = requestDTO.message();
         this.title          = requestDTO.title();
         this.creationDate   = Instant.now();
-        this.recipient      = requestDTO.recipient();
+        this.user           = requestDTO.user();
     }
 }
