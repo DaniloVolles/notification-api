@@ -1,6 +1,11 @@
-# Executing the application
+## Sobre essa API
 
-## Steps
+O objetivo dessa aplicação foi implementar um endpoint exposto para inclusão de notificações. <br>
+Essas notificações são recebidas pela a aplicação, salvas em um banco de dados, e enviadas para um tópico kafka. Para serem processadas e entregadas para os usuários destinatários na [notification-service](https://github.com/DaniloVolles/notification-service).
+
+A rigor, é uma aplicação com arquitetura orientada a eventos, possui comunicação assíncrona real e um Kafka desacoplado para transporte de mensagens.
+
+## Executing the application
 
 - Ensure Docker is installed and running on your operating system
 - Ensure Java 17 and Maven are installed and properly configured
